@@ -1,5 +1,7 @@
 from fastapi import APIRouter
 from app.api.endpoints.health import router as health_router
+from app.api.endpoints.sales import router as sales_router
 
 router = APIRouter()
 router.include_router(health_router, prefix="/health")
+router.include_router(sales_router, prefix="/sales")

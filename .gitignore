@@ -1,4 +1,28 @@
-# Ignorowanie wszystkich folderów __pycache__
-__pycache__/
-*.pyc
+# Środowisko wirtualne
+.venv/
+env/
+venv/
 
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data / pliki tymczasowe
+*.csv
+*.xlsx
+*.log
+*.db
+/data/temp/
+*.sqlite3
+
+# IDE / edytory
+.vscode/
+.idea/
+
+# System
+.DS_Store
+Thumbs.db
+
+# FastAPI / Uvicorn / Logs
+*.log

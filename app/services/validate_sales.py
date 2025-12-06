@@ -16,19 +16,27 @@ def validate_csv_records(df: pd.DataFrame, row_offset: int=1, strict_threshold: 
         raise ValueError(f"Missing columns: {missing}")
     
     records = df.to_dict(orient="records")
+
     valid_records = []
     errors = []
 
     for idx, rec in enumerate(records, start=row_offset):
         try:
             validated = SalesInput(**rec)
-            valid_records.append(validated)
+            valid_records.append(validated.model_dump())
         except ValidationError as e:
             errors.append({
                 "row": idx,
                 "raw": rec,
                 "error": e.errors()
             })
+
+    total = len(records)
+    bad_count = len(errors)
+    errors_rate = bad_count / total
+
+    if errors_rate > strict_threshold:
+        raise ValueError("To meny errors in records, operation aborted!")
 
     simplified_errors = []
     for err in errors:
@@ -46,4 +54,7 @@ def validate_csv_records(df: pd.DataFrame, row_offset: int=1, strict_threshold: 
             "row": err["row"],
             "errors": simplified_errors_for_row
             })
-    return simplified_errors
+    return {
+        "valid records": valid_records,
+        "errors": simplified_errors
+    }

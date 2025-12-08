@@ -6,10 +6,15 @@ fastapi==0.121.3
 greenlet==3.2.4
 h11==0.16.0
 idna==3.11
+iniconfig==2.3.0
 numpy==2.3.5
+packaging==25.0
 pandas==2.3.3
+pluggy==1.6.0
 pydantic==2.12.4
 pydantic_core==2.41.5
+Pygments==2.19.2
+pytest==9.0.2
 python-dateutil==2.9.0.post0
 python-multipart==0.0.20
 pytz==2025.2

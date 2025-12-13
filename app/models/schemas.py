@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator, model_validator, ValidationError
+from pydantic import BaseModel, Field, field_validator, model_validator
 from datetime import date
 
 class SalesInput(BaseModel):
@@ -15,6 +15,6 @@ class SalesInput(BaseModel):
     def check_if_date_not_future(self):
         today = date.today()
         if self.date > today:
-            raise ValueError("error date form the future!")
+            raise ValueError("Date form the future!")
         return self
     

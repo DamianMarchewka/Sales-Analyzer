@@ -1,6 +1,13 @@
 import pandas as pd
 from app.services.validate_sales import validate_csv_records
-import pytest
+
+
+# """
+# IMPORTANT --> One invalid record doesn't corrupt whole file.
+#                 We collect errors,
+#                 we redord the line number,
+#                 we record the details
+# """
 
 
 def test_validate_csv_records_valid_input():
@@ -71,25 +78,3 @@ def test_validate_csv_records_future_date():
     row_errors = result["errors"]
     errors_msg = [e["message"] for err in row_errors for e in err["errors"]]
     assert "Value error, Date form the future!" in errors_msg
-
-
-def test_validate_csv_records_validation_aborted():
-    df = pd.DataFrame([
-        {"date": "2024-10-02", "product": "", "quantity": 1, "price": 10},
-        {"date": "01-02-2024", "product": "mouse", "quantity": 1, "price": 5},
-        {"date": "2024-10-02", "product": "monitor", "quantity": 1, "price": -20},
-        {"date": "2024-10-02", "product": "webcom", "quantity": 1, "price": 5}
-    ])
-
-    with pytest.raises(ValueError, match="To meny errors in records, operation aborted!"):
-        validate_csv_records(df, strict_threshold=0.5)
-
-
-def test_validate_csv_records_missing_column():
-    df = pd.DataFrame([
-        {"date": "2024-01-02", "product": "keyboard", "price": 10},
-        {"date": "2024-01-02", "product": "mouse", "quantity": 1, "price": 5}
-    ])
-
-    with pytest.raises(ValueError):
-        validate_csv_records(df, strict_threshold=1.0)

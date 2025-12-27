@@ -22,7 +22,7 @@ def validate_csv_records(df: pd.DataFrame, row_offset: int=1, strict_threshold: 
 
     for idx, rec in enumerate(records, start=row_offset):
         try:
-            validated = SalesInput(**rec)
+            validated = SalesInput(**rec) # type: ignore
             valid_records.append(validated.model_dump())
         except ValidationError as e:
             errors.append({

@@ -32,7 +32,6 @@ This project is a high-performance **Sales Data Validation Tool** designed to en
 
 1. **Clone the repository:**
 ```
-```bash
 git clone https://github.com/DamianMarchewka/Sales-Analyzer
 cd sales-data-validation
 ```
@@ -40,7 +39,6 @@ cd sales-data-validation
 
 Set up virtual environment:
 ```
-bash
 python -m venv venv
 source venv/bin/activate #Linux/Mac
 venv\Scripts\activate #Windows
@@ -49,7 +47,6 @@ venv\Scripts\activate #Windows
 
 Install dependencies:
 ```
-bash
 pip install -r requirements.txt
 ```
 
@@ -102,7 +99,6 @@ The project follows Clean Architecture layers to ensure low coupling:
 - Tests cover edge cases like empty strings, future dates, and threshold limits.
 Run tests with verbosity:
 ```
-bash
 pytest -v
 ```
 

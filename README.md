@@ -33,7 +33,7 @@ This project is a high-performance **Sales Data Validation Tool** designed to en
 1. **Clone the repository:**
 ```
 ```bash
-git clone <https://github.com/DamianMarchewka/Sales-Analyzer>
+git clone https://github.com/DamianMarchewka/Sales-Analyzer
 cd sales-data-validation
 ```
 

@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    container_name: sales_analyzer
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app

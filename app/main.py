@@ -3,4 +3,12 @@ from app.api.router import router as api_router
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "service": "sales-analyzer",
+        "version": "1.0.0"
+    }
+
 app.include_router(api_router, prefix="/api")

@@ -1,5 +1,7 @@
 # Sales Analizer
 
+[![CI](https://github.com/DamianMarchewka/Sales-Analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/DamianMarchewka/Sales-Analyzer/actions/workflows/ci.yml)
+
 ## Project Overview
 
 This project is a high-performance **Sales Data Validation Tool** designed to ensure data integrity before downstream processing.

@@ -46,11 +46,13 @@ Set up virtual environment:
 ```
 python -m venv venv
 ```
+Linux/McOS
 ```
-source venv/bin/activate #Linux/McOS
+source venv/bin/activate
 ```
+Windows
 ```
-venv\Scripts\activate #Windows
+venv\Scripts\activate
 ```
 
 

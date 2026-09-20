@@ -33,25 +33,29 @@ This project is a high-performance **Sales Data Validation Tool** designed to en
 ### Installation
 
 1. **Clone the repository:**
+
 ```
-```bash
 git clone https://github.com/DamianMarchewka/Sales-Analyzer
+```
+```
 cd sales-data-validation
 ```
 
 
 Set up virtual environment:
 ```
-bash
 python -m venv venv
+```
+```
 source venv/bin/activate #Linux/McOS
+```
+```
 venv\Scripts\activate #Windows
 ```
 
 
 Install dependencies:
 ```
-bash
 pip install -r requirements.txt
 ```
 
